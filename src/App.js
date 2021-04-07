@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor(){
+        super()
+        this.state = {
+            fullName: '',
+            userName: '',
+            email: '',
+            password: ''
+        }
+    }
+
+    render() {
+        return(
+            <div>
+                <div className="container">
+                    <div className="form-div">
+                        <form>
+                            <input type='text'
+                            placeholder='Full name'
+                            onChange={this.handleFullName}
+                            value={this.state.fullName}
+                            className='form-control form-group'
+                            />
+                            <input type='text'
+                            placeholder='User name'
+                            onChange={this.handleUserName}
+                            value={this.state.userName}
+                            className='form-control form-group'
+                            />
+                            <input type='text'
+                            placeholder='Email'
+                            onChange={this.handleEmail}
+                            value={this.state.email}
+                            className='form-control form-group'
+                            />
+                            <input type='password'
+                            placeholder='Password'
+                            onChange={this.handlePassword}
+                            value={this.state.password}
+                            className='form-control form-group'
+                            />
+                            <input 
+                            type='submit'
+                            className='btn btn-danger'
+                            />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
